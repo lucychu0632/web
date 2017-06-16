@@ -1,0 +1,36 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --watch",
+    "start": "webpack-dev-server --open",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:dist": "webpack --env=prod --progress --profile --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucychu0632/web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucychu0632/web/issues"
+  },
+  "homepage": "https://github.com/lucychu0632/web#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.28.0",
+    "react-dom": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
