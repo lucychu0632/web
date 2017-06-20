@@ -39,6 +39,13 @@ module.exports = {
         use: [
           'file-loader'
         ]
+      },{
+        test: /\.scss$/,
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
+          'sass-loader'
+        ]
       }
     ],
   },
