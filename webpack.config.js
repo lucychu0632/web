@@ -1,50 +1,46 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './src/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
 module.exports = {
-  entry: {
-    app: './src/index.js',
-    vendor: [ 'react', 'react-dom' ]
-  },
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    publicPath:'/'
+    path: path.resolve('dist'),
+    filename: 'index_bundle.js'
   },
   module: {
-    rules: [
+    loaders: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },{
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
         ]
-      },
-      {
+      },{
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           'file-loader'
         ]
-      },
-      {
+      },{
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
         ]
       }
-    ]
+    ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Output Management',
-      favicon: './assets/images/favicon.ico',
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  devtool: "cheap-eval-source-map",
-  devServer: {
-    hot: true, // Tell the dev-server we're using HMR
-    contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  }
-};
+  plugins:[HtmlWebpackPluginConfig]
+}

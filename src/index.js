@@ -1,8 +1,5 @@
-import Test from './components/Test';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-if (module.hot) {
-  module.hot.accept('./library', function() {
-    console.log('Accepting the updated library module!');
-    Library.log();
-  })
-}
+ReactDOM.render(<App />, document.getElementById('root'));
