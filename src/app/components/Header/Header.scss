@@ -1,0 +1,131 @@
+@import "./src/sass/_vars";
+@import "./src/sass/_mixins";
+
+.header {
+  width: 100%;
+  height: $header-height;
+  font-size: $font-size-h1;
+  background-color: $header-bg;
+  .left {
+    width: $left-menu-width;
+    float: left;
+    position: relative;
+    text-align: center;
+  }
+  .logo {
+    display: inline-block;
+    padding-top: $space-small;
+    img {
+      width: auto;
+      height: 40px;
+    }
+  }
+  .right {
+    float: right;
+    text-align: right;
+    font-size: $font-size-h2;
+    color: $header-text;
+    padding-top: $space-small;
+  }
+  .menuIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: $font-size-icon-base;
+    line-height: $header-height;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: $screen-md) {
+    .logo {
+      display: none;
+    }
+    .menuIcon {
+      left: $space-large;
+      right: auto;
+    }
+  }
+}
+
+.userInfo {
+  padding-right: $space-larger;
+  position: relative;
+  .userName {
+    border: 1px solid $border-color;
+    padding: $space-smaller $space-large $space-smaller $space-small;
+    border-radius: $border-radius-base;
+    color: $link-color;
+    font-size: $font-size-base;
+    position: relative;
+    line-height: $line-height-larger;
+    display: inline-block;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: $space-small;
+      vertical-align: middle;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: $space-smaller;
+      display: inline-block;
+      @include triangle(down, 5px, $body-text)
+    }
+  }
+  ul {
+    display: none;
+    position: absolute;
+    top: 53px;
+    left: 8px;
+    background-color: $link-color;
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+    a {
+      display: block;
+      padding: $space-base $space-larger;
+      font-size: $font-size-large;
+      color: $white;
+      line-height: $line-height-base;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+  &:hover {
+    > ul {
+      display: block;
+    }
+  }
+  @media only screen and (max-width: $screen-md) {
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: $screen-md + 1) {
+  .openLeft {
+    .header {
+      .left {
+        width: $left-close-menu-width;
+      }
+      .logo {
+        padding-top: $space-base;
+        img {
+          width: 50px;
+          height: auto;
+        }
+      }
+      .menuIcon {
+        right: -30px;
+      }
+    }
+    :global {
+      .right-container {
+        margin-left: $left-close-menu-width;
+      }
+    }
+  }
+}

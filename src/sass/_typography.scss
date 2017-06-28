@@ -1,0 +1,226 @@
+:global {
+  * {
+    @include box-sizing(border-box);
+  }
+  *:before,
+  *:after {
+    @include box-sizing(border-box);
+  }
+
+  html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: $page-bg;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-text;
+  }
+
+  [class^="col-"] {
+    //position: relative;
+    float: left;
+    //min-height: 1px;
+    //padding-left: $grid-padding;
+    //padding-right: $grid-padding;
+  }
+
+  @include grid-columns(xs);
+
+  @media only screen and (min-width: $screen-lg) {
+    @include grid-columns(lg);
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    @include grid-columns(md);
+  }
+
+  @media only screen and (min-width: $screen-sm) {
+    @include grid-columns(sm);
+  }
+
+  .link-normal {
+    color: $text-link;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $text-link-hover;
+      text-decoration: $link-hover-decoration;
+    }
+    &:disabled {
+      color: $text-link-disabled;
+    }
+  }
+
+  .clearfix {
+    @include clearfix;
+  }
+
+  .pull-right {
+    float: right;
+  }
+  .pull-left {
+    float: left;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    //margin-top: $line-height-base;
+    //margin-bottom: ($line-height-base / 2);
+    font-weight: $font-weight-semibold;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: $font-size-h1;
+  }
+
+  h2 {
+    font-size: $font-size-h2;
+  }
+
+  h3 {
+    font-size: $font-size-h3;
+  }
+
+  .sub-heading {
+    font-size: $font-size-large;
+    color: $indication-text;
+  }
+
+  .font-small {
+    font-size: $font-size-small;
+  }
+
+  small,
+  .small {
+    font-size: $font-size-smaller;
+  }
+
+  // Alignment
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-nowrap {
+    white-space: nowrap;
+  }
+
+  // Transformation
+  .text-lowercase {
+    text-transform: lowercase;
+  }
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+
+  // Unordered and Ordered lists
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: $font-size-base;
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  // List options
+
+  // [converter] extracted from `.list-unstyled` for libsass compatibility
+  @mixin list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  // [converter] extracted as `@mixin list-unstyled` for libsass compatibility
+  .list-unstyled {
+    @include list-unstyled;
+  }
+
+  // Inline turns list items into inline-block
+  .list-inline {
+    @include list-unstyled;
+    margin-left: -5px;
+
+    > li {
+      display: inline-block;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  // Description Lists
+  dl {
+    margin-top: 0; // Remove browser default
+    margin-bottom: $font-size-base;
+  }
+  dt,
+  dd {
+    line-height: $line-height-base;
+  }
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin-left: 0; // Undo browser default
+  }
+  .btn-normal {
+    background-color: $btn-bg-base;
+    padding: $space-small $space-larger;
+    font-size: $font-size-small;
+    color: $white;
+    line-height: $line-height-btn;
+    border-radius: $border-radius-base;
+    display: inline-block;
+    border: none;
+    &:hover {
+      background-color: $btn-bg-hover-base;
+    }
+  }
+  .btn-file {
+    background-color: $btn-file-bg;
+    padding: $space-small;
+    font-size: $font-size-small;
+    color: $btn-file-text;
+    line-height: $line-height-btn;
+    border-radius: $border-radius-base;
+    display: inline-block;
+    border: 1px dashed $border-color;
+    margin-top: $space-base;
+  }
+  .row {
+    margin-left: -$grid-padding;
+    margin-right: -$grid-padding;
+    @include clearfix;
+  }
+  .p-relative {
+    position: relative;
+  }
+  .m-tb-30 {
+    margin: $space-larger 0;
+  }
+}

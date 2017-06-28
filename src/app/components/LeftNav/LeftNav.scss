@@ -1,0 +1,164 @@
+@import "./src/sass/_vars";
+
+.leftNav {
+  width: $left-menu-width;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: $space-small 0;
+  background-color: $menu-bg;
+  transition: width .3s;
+  z-index: 10;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @media only screen and (max-width: $screen-md) {
+    display: none;
+  }
+}
+
+.mainMenu {
+  li {
+    a {
+      display: block;
+      padding: $space-base;
+      font-size: $font-size-small;
+      color: $menu-text;
+      background-color: $menu-bg;
+      text-decoration: none;
+      position: relative;
+      i {
+        margin-right: $space-small;
+        font-size: $font-size-h2;
+      }
+
+      &:hover,
+      &.active {
+        color: $white;
+        background-color: $menu-hover;
+      }
+    }
+    .hasSubMenu {
+      &:after {
+        content: "+";
+        position: absolute;
+        top: $space-base;
+        right: $space-base;
+        line-height: $line-height-base;
+        width: $space-small;
+        text-align: center;
+      }
+    }
+    &.active {
+      .hasSubMenu {
+        &:after {
+          content: "-";
+        }
+      }
+      .subMenu {
+        display: block;
+      }
+    }
+  }
+  .subMenu {
+    display: none;
+    a {
+      padding: $space-base $spacing-largest;
+      &:hover,
+      &.active {
+        color: $menu-text;
+        background-color: $menu-heading-bg;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-md + 1) {
+  .openLeft {
+    .right-container {
+      margin-left: $left-close-menu-width;
+    }
+  }
+  .leftClosed {
+    width: $left-close-menu-width;
+    //text-align:center;
+    transition: width .3s;
+    .mainMenu {
+      li {
+        position: relative;
+        a {
+          padding: $space-base 0;
+          white-space: nowrap;
+          display: table;
+          background-color: $menu-bg;
+          z-index: 1;
+          i {
+            display: inline-block;
+            margin-right: 0;
+            width: $left-close-menu-width;
+            text-align: center;
+            font-size: $font-size-h2;
+          }
+          span {
+            display: none;
+            font-size: $font-size-small;
+          }
+
+          &:hover,
+          &.active {
+            color: $white;
+            background-color: $menu-hover;
+          }
+        }
+        .hasSubMenu {
+          min-height: 48px;
+          &:after {
+            content: "";
+          }
+        }
+        &.active {
+          .hasSubMenu {
+            &:after {
+              content: "";
+            }
+          }
+          .subMenu {
+            display: none;
+            a {
+              padding: $space-base $space-large;
+              width: 100%;
+            }
+          }
+        }
+        &:hover {
+          .mainMenuName {
+            width: $left-menu-width;
+            display: inline-block;
+            padding-left: $space-large;
+            font-size: $font-size-large;
+            line-height: 18px;
+            z-index: 10;
+          }
+        }
+        &:hover .subMenu {
+          position: absolute;
+          top: 48px;
+          left: $left-close-menu-width;
+          background-color: $menu-bg;
+          padding-left: 0;
+          width: $left-menu-width;
+          display: inline-block;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+.leftClosed {
+  @media only screen and (max-width: $screen-md) {
+    display: block;
+  }
+}

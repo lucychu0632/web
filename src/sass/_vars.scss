@@ -1,0 +1,119 @@
+$header-bg:               #fff !default;
+$header-text:             #666 !default;
+
+$white:                   #fff    !default;
+
+$menu-heading-bg:         #212934 !default;
+$menu-heading-text:       #3c4b5b !default;
+$menu-bg:                 #2a3542 !default;
+$menu-text:               #aeb2b7 !default;
+$menu-hover:              #35404d !default;
+
+$body-text:               #555459 !default;
+$input-text:              #555459 !default;
+$indication-text:         #9e9ea6 !default;
+
+$input-shadow:            rgba(0, 122, 184, .3);
+
+$input-color-placeholder: #c5c5c5 !default;
+$link-color:              #c5c5c5 !default;
+$soft-text:               #c5c5c5 !default;
+$input-border:            #c5c5c5 !default;
+$border-color:            #c7cacd !default;
+$divider-color:           #e8e8e8 !default;
+$image-bg-color:          #f2f2f2 !default;
+
+$form-line-color:         #f1f2f7 !default;
+$page-bg:                 #f9f9f9 !default;
+
+$secondary-button-bg:     #fbfbfa !default;
+$btn-bg-hover-base:       #f2a71d !default;
+$btn-bg-base:             #f7bc24 !default;
+$btn-bg-disabled:         #c5c5c5 !default;
+
+$btn-file-hover:          #f2a71d !default;
+$btn-file-bg:             #f2f2f2 !default;
+$btn-file-text:           #000 !default;
+
+$preview-tab-active-color: #007ab8 !default;
+
+$text-link:               #129cc4 !default;
+$text-link-hover:         #007ab8 !default;
+$text-link-disabled:      #9e9ea6 !default;
+
+$error-text:              #ff3120 !default;
+$error-bg:                rgba(255, 49, 32, .1) !default;
+$success-text:            #33c96f !default;
+$success-bg:              rgba(51, 201, 111, .3) !default;
+
+$link-hover-decoration:   underline !default;
+
+$font-family-base:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$font-size-h1:            30px !default;
+$font-size-h2:            18px !default;
+$font-size-h3:            14px !default;
+
+$font-size-large:         15px !default;
+$font-size-base:          14px !default;
+$font-size-small:         13px !default;
+$font-size-smaller:       12px !default;
+
+$font-size-icon-base:     20px !default;
+$font-size-icon-large:    40px !default;
+
+$font-weight-light:       200 !default;
+$font-weight-regular:     400 !default;
+$font-weight-semibold:    600 !default;
+$font-weight-bold:        700 !default;
+
+$line-height-btn:         16px !default;
+$line-height-base:        15px !default;
+$line-height-large:       20px !default;
+$line-height-larger:      30px !default;
+$line-height-small:       1.5 !default;
+
+$space-base:              15px !default;
+$space-large:             20px !default;
+$space-larger:            30px !default;
+$spacing-largest:         40px !default;
+$space-small:             10px !default;
+$space-smaller:           5px !default;
+
+$border-radius-base:      4px !default;
+$border-radius-larger:    10px !default;
+$border-radius-large:     6px !default;
+$border-radius-small:     3px !default;
+
+$app-logo-width:          100px !default;
+$left-menu-width:         200px !default;
+$left-close-menu-width:   70px !default;
+$header-height:           60px !default;
+$simulator-height:        60px !default;
+$simulator-width:         60px !default;
+$tab-height:              50px !default;
+$tab-content-height:      800px !default;
+$input-height:            36px !default;
+
+$grid-columns:            12 !default;
+$grid-padding:            10px !default;
+
+$select-color-width-base: 20px !default;
+
+$dot-color:               #007ab8 !default;
+$dot-width:               10px !default;
+
+$preview-nav-height:      44px !default;
+
+$preview-notice-width:    15px !default;
+$preview-notice-height:   15px !default;
+
+$preview-tab-text:        #999 !default;
+
+$screen-sm:               768px !default;
+$screen-md:               1024px !default;
+$screen-lg:               1200px !default;
+
+$screen-md-max:           ($screen-md - 1) !default;
+$screen-lg-max:           ($screen-lg - 1) !default;
+$screen-sm-max:           ($screen-sm - 1) !default;

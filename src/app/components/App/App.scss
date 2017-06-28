@@ -1,0 +1,10 @@
+@import "./src/sass/_vars";
+@import "./src/sass/_mixins";
+@import "./src/sass/_typography";
+
+.app{
+  height: auto;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
